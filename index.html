@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver Modelo Baja Peso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;       /* Hace que el texto se ajuste al tamaño de la pantalla */
+      word-wrap: break-word;      /* Hace que las palabras largas se rompan si es necesario */
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contenido de Modelo-Baja-Peso.json</h1>
+  <pre id="json-content">Cargando datos...</pre>
+
+  <script>
+    // Asegúrate de que el archivo Modelo-Baja-Peso.json esté en el mismo directorio
+    fetch('Modelo-Baja-Peso.json')
+      .then(response => response.json())
+      .then(data => {
+        // Mostrar el JSON formateado en el contenedor <pre>
+        document.getElementById('json-content').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        document.getElementById('json-content').textContent = "Error al cargar el archivo JSON: " + error;
+      });
+  </script>
+</body>
+</html>
